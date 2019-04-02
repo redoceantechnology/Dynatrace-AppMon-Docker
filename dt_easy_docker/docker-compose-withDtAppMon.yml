@@ -94,11 +94,11 @@ services:
       ET_BACKEND_URL: "http://easytravel-backend:8080"
       ET_PROBLEMS: "BadCacheSynchronization,CPULoad,DatabaseCleanup,DatabaseSlowdown,ExceptionSpamming,FetchSizeTooSmall,JourneySearchError404,JourneySearchError500,LoginProblems,MediumMemoryLeak,MobileErrors,TravellersOptionBox"
 
-volumes:
-  agentdata:
-    external: true
-
 networks:
     default:
         external:
             name: dynatracedocker_appmon
+
+volumes:
+  agentdata:
+    external: true

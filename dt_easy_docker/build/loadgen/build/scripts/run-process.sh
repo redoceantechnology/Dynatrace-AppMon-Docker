@@ -1,6 +1,5 @@
 #!/bin/bash
-ET_FRONTEND_URL=${ET_FRONTEND_URL:-'http://easytravel-frontend:8080'}
-ET_BACKEND_URL=${ET_BACKEND_URL:-'http://easytravel-backend:8080'}
+ET_FRONTEND_URL=${ET_FRONTEND_URL:-'http://localhost:8080'}
 ET_PROBLEMS_DELAY=${ET_PROBLEMS_DELAY:-0}
 EXTRA_OPTS="--installationMode ${ET_APM_SERVER_DEFAULT:-Classic}"
 

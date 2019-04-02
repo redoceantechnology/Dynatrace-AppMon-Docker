@@ -1,4 +1,4 @@
-version: "3"
+version: "2.1"
 services:
     httpd:
       container_name: httpd
@@ -11,17 +11,16 @@ services:
         - COMPOSE_PROJECT_NAME
         - DT_AGENT_NAME=httpd
         - DT_AGENT_COLLECTOR=${DT_COLLECTOR_NAME}
+      volumes_from:
+      - container:dtagent
       command: >
         sh -c " \
           ${DT_HOME}/run-wsagent.sh && \
           (echo LoadModule dtagent_module ${DT_HOME}${AGENT_LIB64} >> conf/httpd.conf) && \
           httpd-foreground"
 
-volumes:
-  agentdata:
-    external: true
 
 networks:
-    default:
-        external:
-            name: dynatracedocker_appmon
+  default:
+    external:
+        name: ${COMPOSE_PROJECT_NAME}_appmon

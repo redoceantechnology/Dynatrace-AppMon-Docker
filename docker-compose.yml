@@ -95,16 +95,12 @@ services:
         - WSAGENT_BIN64
         - WSAGENT_INI
       volumes:
-        - agentdata:${DT_HOME}
-        # - agentdata:${DT_HOME}/agent/lib64
+        - ${DT_HOME}
+        - ${DT_HOME}/agent/lib64
         - "${DT_AGENT_LOG_PATH_ON_HOST}:${DT_HOME}/log/agent"
       networks:
         - appmon
       user: "${CUID}:${CGID}"
-
-volumes:
-  agentdata:
-    external: true
 
 networks:
     appmon:
