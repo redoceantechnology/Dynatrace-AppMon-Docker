@@ -93,6 +93,7 @@ services:
       ET_FRONTEND_URL: "http://easytravel-frontend:8080"
       ET_BACKEND_URL: "http://easytravel-backend:8080"
       ET_PROBLEMS: "BadCacheSynchronization,CPULoad,DatabaseCleanup,DatabaseSlowdown,ExceptionSpamming,FetchSizeTooSmall,JourneySearchError404,JourneySearchError500,LoginProblems,MediumMemoryLeak,MobileErrors,TravellersOptionBox"
+      ET_PROBLEMS_DELAY: 7500
 
 networks:
     default:
